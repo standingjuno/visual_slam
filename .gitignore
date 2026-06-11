@@ -1,0 +1,8 @@
+# Third-party libraries
+3rdparty/
+
+# Build output
+build/
+
+# macOS
+.DS_Store
