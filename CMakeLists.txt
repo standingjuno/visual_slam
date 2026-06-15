@@ -8,6 +8,8 @@ find_package(Eigen3 REQUIRED)
 find_package(Pangolin REQUIRED)
 find_package(Sophus REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(Ceres REQUIRED)
+find_package(g2o REQUIRED)
 
 add_executable(useEigen ch03/useEigen.cpp)
 target_link_libraries(useEigen Eigen3::Eigen)
@@ -32,3 +34,12 @@ target_link_libraries(imageBasics ${OpenCV_LIBS})
 
 add_executable(undistortImage ch05/undistortImage.cpp)
 target_link_libraries(undistortImage ${OpenCV_LIBS})
+
+add_executable(gaussNewton ch06/gaussNewton.cpp)
+target_link_libraries(gaussNewton Eigen3::Eigen ${OpenCV_LIBS})
+
+add_executable(ceresCurveFitting ch06/ceresCurveFitting.cpp)
+target_link_libraries(ceresCurveFitting Eigen3::Eigen ${OpenCV_LIBS} Ceres::ceres)
+
+add_executable(g2oCurveFitting ch06/g2oCurveFitting.cpp)
+target_link_libraries(g2oCurveFitting Eigen3::Eigen ${OpenCV_LIBS} g2o::core g2o::stuff g2o::solver_dense)
