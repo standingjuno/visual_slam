@@ -43,3 +43,12 @@ target_link_libraries(ceresCurveFitting Eigen3::Eigen ${OpenCV_LIBS} Ceres::cere
 
 add_executable(g2oCurveFitting ch06/g2oCurveFitting.cpp)
 target_link_libraries(g2oCurveFitting Eigen3::Eigen ${OpenCV_LIBS} g2o::core g2o::stuff g2o::solver_dense)
+
+add_executable(orb_cv ch07/orb_cv.cpp)
+target_link_libraries(orb_cv ${OpenCV_LIBS})
+
+add_executable(pose_estimation_2d2d ch07/pose_estimation_2d2d.cpp)
+target_link_libraries(pose_estimation_2d2d ${OpenCV_LIBS})
+
+add_executable(triangulation ch07/triangulation.cpp)
+target_link_libraries(triangulation ${OpenCV_LIBS})
